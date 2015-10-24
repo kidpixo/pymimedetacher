@@ -64,10 +64,10 @@ def openmailbox(inmailboxpath,outmailboxpath):
             print 'Multip.      : ',msg.is_multipart()
             print 'Content-Type : ',msg.get('Content-Type')
             print 'Parts        : '
-        detach(msg,key,outmailboxpath)
+        detach(msg, key, outmailboxpath, mbox)
         print '='*20
 
-def detach(msg,key,outmailboxpath):
+def detach(msg, key, outmailboxpath, mbox):
     """ Cycle all the part of message,
     detach all the not text or multipart content type to outmailboxpath
     delete the header and rewrite is as a text inline message log.
