@@ -1,5 +1,7 @@
 # pymimedetacher
 
+[![Join the chat at https://gitter.im/kidpixo/pymimedetacher](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kidpixo/pymimedetacher?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Compact script to parse maildir structure, detach attachment and save them in a directory structure mirroring the mailbox folders.
 
 It is based on python core-library [mailbox (Manipulate mailboxes in various formats — Python 2.7.10 documentation)](https://docs.python.org/2/library/mailbox.html).
