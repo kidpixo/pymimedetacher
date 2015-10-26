@@ -64,10 +64,10 @@ def openmailbox(inmailboxpath,outmailboxpath):
             print 'Multip.      : ',msg.is_multipart()
             print 'Content-Type : ',msg.get('Content-Type')
             print 'Parts        : '
-        detach(msg,key,outmailboxpath)
+        detach(msg, key, outmailboxpath, mbox)
         print '='*20
 
-def detach(msg,key,outmailboxpath):
+def detach(msg, key, outmailboxpath, mbox):
     """ Cycle all the part of message,
     detach all the not text or multipart content type to outmailboxpath
     delete the header and rewrite is as a text inline message log.
@@ -91,6 +91,7 @@ def detach(msg,key,outmailboxpath):
                     fp = open(outpath+filename, 'wb')
                     fp.write(part.get_payload(decode=1))
                     fp.close()
+                outmessage = '    ATTACHMENT=%s\n    moved to\n    OUTPATH=%s' %(filename,outpath[len(OUTPATH):]+filename)
                 if options.del_attach:
                     # rewrite header and delete attachment in payload
                     tmp = [part.__delitem__(h) for h in part.keys()]
@@ -98,7 +99,6 @@ def detach(msg,key,outmailboxpath):
                     part.set_param('Content-Type','text/html; charset=ISO-8859-1')
                     part.set_param('Content-Disposition','inline')
                     mbox.__setitem__(key, msg)
-                outmessage = '    ATTACHMENT=%s\n    moved to\n    OUTPATH=%s' %(filename,outpath[len(OUTPATH):]+filename)
                 print outmessage
                 print '-----'
 
@@ -118,4 +118,3 @@ for folder in mylistdir(PATH):
     print '='*20
     openmailbox(PATH+os.sep+folder,folderpath)
     print 40*'*'
-
