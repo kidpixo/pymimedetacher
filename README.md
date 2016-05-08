@@ -8,11 +8,11 @@ It is based on python core-library [mailbox (Manipulate mailboxes in various for
 
 ## Options
 
--h, --help
+`-h, --help`
 
 show help message and exit
 
--i PATH, --input=PATH
+`-i PATH, --input=PATH`
 
 Input [Maildir](https://en.wikipedia.org/wiki/Maildir) path to parse.
 
@@ -23,19 +23,19 @@ Some good tutorials on offlineimap setup specific to gmail:
 - [Mutt + Gmail + Offlineimap](https://pbrisbin.com/posts/mutt_gmail_offlineimap/)
 - [OfflineIMAP - ArchWiki](https://wiki.archlinux.org/index.php/OfflineIMAP)
 
--o OUTPATH, --output=OUTPATH
+`-o OUTPATH, --output=OUTPATH`
 
 Output path to store the attachments, the subfolders will mirror the mailbox folder structure.
 
--d, --delete-attachment
+`-d, --delete-attachment`
 
 Delete the attachments in the original mail, default is to leave there.
 
--s, --save_attachment
+`-s, --save_attachment`
 
 Save and decode the attachments files, default is do nothing.
 
--v, --verbose
+`-v, --verbose`
 
 Print more verbose output.
 
